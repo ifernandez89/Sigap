@@ -195,7 +195,7 @@ export default function AgregarFactura() {
                     <label className='Labels'>Punta de Pot. conve:</label><span className="espacio"></span>
                     <input className='textbox' type="" onChange={setPtapotconv} value={ptapotconv} />
                     <br /><br />
-                    <button className='textbox' onClick={aceptar}><Link className="" to={'/'}> aceptar</Link> </button><span className=""></span>
+                    <button className='textbox' onClick={aceptar}><Link className="" to={'/'}> aceptar</Link> </button><span className="espacio"></span>
                     <button className='textbox' ><Link className="" to={'/'}> cancelar</Link></button>
                 </form>
             </div>
