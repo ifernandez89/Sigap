@@ -21,7 +21,7 @@ export default function AgregarFactura() {
     const [infodes, setInfodes] = useState("");
     const [cosphi, setCosphi] = useState("");
     const [factorpot, setFactorpot] = useState("");
-    const [rectfactpot, setRecfactpot] = useState("");
+    const [recfactpot, setRecfactpot] = useState("");
     const [ptapotconv, setPtapotconv] = useState("");
     const [ptapotreg, setPtapotreg] = useState("");
     const [fptapotconv, setFptapotconv] = useState("");
@@ -29,7 +29,6 @@ export default function AgregarFactura() {
     const [fptapotconve, setFptapotconve] = useState("");
     const [fptapotregi, setFptapotregi] = useState("");
     const [t4potconv, setT4potconv] = useState("");
-    const [consalerta, setConsalerta] = useState("");
 
     function SetNfact(e) {
         setNfact(e.target.value);
@@ -88,9 +87,6 @@ export default function AgregarFactura() {
     function SetT4potconv(e) {
         setT4potconv(e.target.value);
     }
-    function SetConsalerta(e) {
-        setConsalerta(e.target.value);
-    }
 
     function aceptar(e) {
         e.preventDefault();
@@ -144,7 +140,6 @@ export default function AgregarFactura() {
                 setFptapotconve('');
                 setFptapotregi('');
                 setT4potconv('');
-                setConsalerta('');
                 window.location.reload();
             }).catch(error => {
                 console.error('Error en la solicitud:', error.message);
@@ -154,10 +149,56 @@ export default function AgregarFactura() {
     }
     return (
         <>
-                <div>
-                    <button>volver a mesas</button>
-                </div>
-       
+            <div className="">
+                <Heading lineHeight='tall'>
+
+                    Agregar factura:
+
+                </Heading>
+                <form className="">
+                    <label className='Labels'>Nº Factura:</label><span className="espacio"></span>
+                    <input className='textbox' type="text" onChange={SetNfact} value={nfact} />
+                    <br /><br />
+                    <label className='Labels'>Fecha:</label> <span className="espacio"></span>
+                    <input className='textbox' type="text" onChange={SetFecha} value={fecha} />
+                    <br /><br />
+                    <label className='Labels'>Nº Expediente:</label><span className="espacio"></span>
+                    <input className='textbox' type="" onChange={SetNexp} value={nexp} />
+                    <br /><br />
+                    <label className='Labels'>Nº Folio:</label><span className="espacio"></span>
+                    <input className='textbox' type="" onChange={SetFolio} value={folio} />
+                    <br /><br />
+                    <label className='Labels'>Importe:</label><span className="espacio"></span>
+                    <input className='textbox' type="" onChange={SetImpvenc} value={importepvenc} />
+                    <br /><br />
+                    <label className='Labels'>Nis:</label><span className="espacio"></span>
+                    <input className='textbox' type="" onChange={SetNis} value={nisnu} />
+                    <br /><br />
+                    <label className='Labels'>Condic.Fiscal:</label><span className="espacio"></span>
+                    <input className='textbox' type="" onChange={setCondfisc} value={condfisciva} />
+                    <br /><br />
+                    <label className='Labels'>Consumo Actual:</label><span className="espacio"></span>
+                    <input className='textbox' type="" onChange={setConsact} value={consactual} />
+                    <br /><br />
+                    <label className='Labels'>Info.Designada:</label><span className="espacio"></span>
+                    <input className='textbox' type="" onChange={setInfodes} value={infodes} />
+                    <br /><br />
+                    <label className='Labels'>Coseno Phi:</label><span className="espacio"></span>
+                    <input className='textbox' type="" onChange={setCosphi} value={cosphi} />
+                    <br /><br />
+                    <label className='Labels'>Factor de Pot.:</label><span className="espacio"></span>
+                    <input className='textbox' type="" onChange={setFactorpot} value={factorpot} />
+                    <br /><br />
+                    <label className='Labels'>Recargo Factor Pot.:</label><span className="espacio"></span>
+                    <input className='textbox' type="" onChange={setRecfactpot} value={recfactpot} />
+                    <br /><br />
+                    <label className='Labels'>Punta de Pot. conve:</label><span className="espacio"></span>
+                    <input className='textbox' type="" onChange={setPtapotconv} value={ptapotconv} />
+                    <br /><br />
+                    <button className='textbox' onClick={aceptar}><Link className="" to={'/'}> aceptar</Link> </button><span className="espacio"></span>
+                    <button className='textbox' ><Link className="" to={'/'}> cancelar</Link></button>
+                </form>
+            </div>
         </>
     );
 }
